@@ -28,6 +28,9 @@ void LogFile::msgHandler(QtMsgType type, const QMessageLogContext &, const QStri
 {
   if (msg.startsWith("libpng warning: iCCP"))
     return;
+  
+  if (msg.startsWith("using qt5ct plugin"))
+    return;
 
   if (type == QtDebugMsg) {
     if (mainApp->isNoDebugOutput()) return;
